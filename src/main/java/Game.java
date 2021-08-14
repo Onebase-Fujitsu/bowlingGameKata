@@ -1,5 +1,5 @@
 public class Game {
-    private int rolls[] = new int[21];
+    private final int[] rolls = new int[21];
     private int currentRoll = 0;
 
     public int getScore() {
@@ -7,7 +7,7 @@ public class Game {
         int frameIndex = 0;
         for (int frame = 0; frame < 10; frame++) {
             if (isStrike(frameIndex)) {
-                score += 10 + rolls[frameIndex+1] + rolls[frameIndex+2];
+                score += 10 + rolls[frameIndex + 1] + rolls[frameIndex + 2];
                 frameIndex += 1;
             } else if (isSpare(frameIndex)) {
                 score += 10 + rolls[frameIndex + 2];
